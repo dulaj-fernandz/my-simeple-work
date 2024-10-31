@@ -1,0 +1,138 @@
+:root {
+    --gradient-from: #6366f1;
+    --gradient-via: #a855f7;
+    --gradient-to: #ec4899;
+    --white-alpha-10: rgba(255, 255, 255, 0.1);
+    --white-alpha-20: rgba(255, 255, 255, 0.2);
+    --purple-500: #a855f7;
+    --purple-600: #9333ea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(to bottom right, var(--gradient-from), var(--gradient-via), var(--gradient-to));
+    padding: 1rem;
+}
+
+.calculator {
+    background: var(--white-alpha-10);
+    backdrop-filter: blur(1rem);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.calculator-header h1 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s;
+}
+
+.icon-button:hover {
+    color: #fca5a5;
+}
+
+.display {
+    background: var(--white-alpha-20);
+    backdrop-filter: blur(0.5rem);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#output {
+    color: white;
+    font-size: 1.875rem;
+    font-weight: 300;
+    text-align: right;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+button {
+    background: var(--white-alpha-20);
+    border: none;
+    border-radius: 0.75rem;
+    color: white;
+    font-size: 1.125rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background: var(--white-alpha-30);
+}
+
+#equals {
+    background: var(--purple-500);
+}
+
+#equals:hover {
+    background: var(--purple-600);
+}
+
+.operator {
+    font-size: 1.25rem;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white-alpha-10);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--white-alpha-20);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--white-alpha-30);
+}
